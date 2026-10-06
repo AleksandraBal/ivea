@@ -215,6 +215,54 @@
   color: var(--sage);
   margin: 0;
 }
+.move .sep{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 0.55em 0.14em;
+  border-radius: 50%;
+  background: var(--deep);
+  vertical-align: middle;
+}
+
+/* ============ THREE STEPS ============ */
+#sequence .slide-body{ align-items: center; }
+.steps{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step{
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: start;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 28px 22px 26px 20px;
+  color: var(--deep);
+}
+.step .n{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--sage);
+  line-height: 1;
+  padding-top: 2px;
+}
+.step h3{
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--deep);
+  margin: 0 0 10px 0;
+  line-height: 1.15;
+}
+.step p{
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--sage);
+  margin: 0;
+}
 
 /* ============ THREE PATTERNS ============ */
 #patterns .slide-body{ align-items: center; }
@@ -277,10 +325,6 @@
   color: var(--mist);
 }
 #takeaways .slide-title{ color: var(--white); }
-
-/* Long titles stay clear of the logo */
-#cost .slide-title,
-#window .slide-title{ font-size: 44px; }
 
 /* ---------- Chrome ---------- */
 .reveal .slide-number{
@@ -421,9 +465,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
     font-size: 52px !important;
     color: var(--white) !important;
   }
-  html:not(.print-pdf) #cost .slide-title,
-  html:not(.print-pdf) #window .slide-title{ font-size: 44px !important; }
-  html:not(.print-pdf) #takeaways .slide-title{ color: var(--white) !important; }
 
   html:not(.print-pdf) .reveal .slide-body{
     display: flex !important;
@@ -434,7 +475,8 @@ html.print-pdf .reveal .speaker-notes-pdf{
     margin: 0 !important;
   }
   html:not(.print-pdf) #patterns .slide-body,
-  html:not(.print-pdf) #takeaways .slide-body{
+  html:not(.print-pdf) #takeaways .slide-body,
+  html:not(.print-pdf) #sequence .slide-body{
     align-items: center !important;
   }
   html:not(.print-pdf) #trainers .slide-body{
@@ -493,6 +535,30 @@ html.print-pdf .reveal .speaker-notes-pdf{
     margin: 0 0 12px 0 !important;
     color: var(--sage) !important;
   }
+
+  html:not(.print-pdf) .reveal .steps{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  html:not(.print-pdf) .reveal .step{
+    display: grid !important;
+    grid-template-columns: 40px 1fr !important;
+    width: auto !important;
+    margin: 0 !important;
+    background: var(--card) !important;
+  }
+  html:not(.print-pdf) .reveal .step h3{
+    font-size: 26px !important;
+    color: var(--deep) !important;
+  }
+  html:not(.print-pdf) .reveal .step p{
+    font-size: 20px !important;
+    color: var(--sage) !important;
+  }
+  html:not(.print-pdf) .reveal .step .n{ color: var(--sage) !important; }
 
   html:not(.print-pdf) .reveal .moves{
     display: grid !important;

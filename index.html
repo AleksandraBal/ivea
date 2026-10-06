@@ -86,6 +86,36 @@
   </div>
 </section>
 
+<!-- ============ 6. SEQUENCE ============ -->
+<section id="sequence">
+  <h2 class="slide-title">Use AI without outsourcing our thinking</h2>
+  <div class="slide-body">
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <h3>Explore — AI first</h3>
+          <p>Research, challenge assumptions, and generate ideas.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <h3>Think &amp; write — You first</h3>
+          <p>Develop the argument and draft independently.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <h3>Polish — AI last</h3>
+          <p>Improve grammar and clarity without changing your ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 4. Common misconceptions— inverted, the centre of the talk ============ -->
 <section id="hard-case" class="invert">
   <h2 class="slide-title">Do You Know How Gen AI Works?</h2>
@@ -127,13 +157,14 @@
 
 <!-- ============ 7. CONTEXT WINDOW ============ -->
 <section id="window">
-  <h2 class="slide-title">The Model Only Sees What's in the Window</h2>
+  <h2 class="slide-title">How to effectively communicate with the model?</h2>
   <div class="slide-body">
-    <ul class="bullets">
-      <li>Every conversation has a memory limit</li>
-      <li>The middle gets the least attention</li>
+    <ul class="bullets five">
+      <li>Every new message adds to the context the model must work with</li>
+      <li>Thread &ne; context window</li>
+      <li>More context &ne; better answers; the model's attention is limited</li>
       <li>Feed it sections, not whole documents</li>
-      <li>Summarize, then start fresh</li>
+      <li>Summarize long threads and start fresh.</li>
     </ul>
   </div>
 </section>
@@ -147,21 +178,21 @@
         <div class="n">1</div>
         <div>
           <h3>Frame it</h3>
-          <p>Context, examples, structure</p>
+          <p>Context<span class="sep"></span>Examples<span class="sep"></span>Output</p>
         </div>
       </div>
       <div class="move">
         <div class="n">2</div>
         <div>
           <h3>Define done</h3>
-          <p>Format, success criteria, permission to say &ldquo;I don't know&rdquo;</p>
+          <p>Format<span class="sep"></span>Success criteria<span class="sep"></span>Permission to say &ldquo;I don't know&rdquo;</p>
         </div>
       </div>
       <div class="move">
         <div class="n">3</div>
         <div>
           <h3>Work the loop</h3>
-          <p>Questions first, edit—don't stack, review adversarially</p>
+          <p>Questions first<span class="sep"></span>Don’t build on mistakes<span class="sep"></span>Review adversarially</p>
         </div>
       </div>
       <div class="move">
@@ -184,6 +215,19 @@
       <li>Memory, custom instructions, web search &mdash; those are app layers</li>
       <li>Projects: shared files across chats, for work you repeat</li>
       <li>Use a generalist you know well; specialists only when it fails</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WEB SEARCH ============ -->
+<section id="web-search">
+  <h2 class="slide-title">How Does Web Search Work?</h2>
+  <div class="slide-body">
+    <ul class="bullets">
+      <li>Search is a tool, not a model capability</li>
+      <li>Search looks through an index and returns a small set of relevant results/snippets</li>
+      <li>The model does the reasoning</li>
+      <li>Pasting a URL does not necessarily mean the model has read the page</li>
     </ul>
   </div>
 </section>
@@ -218,6 +262,18 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ AGENT QUESTIONS ============ -->
+<section id="agent-questions">
+  <h2 class="slide-title">Three Questions Before You Build an Agent</h2>
+  <div class="slide-body">
+    <ul class="bullets">
+      <li>Is the task interpretation-heavy?</li>
+      <li>Can you live with a different answer each run?</li>
+      <li>Do the edge cases outnumber the rules?</li>
+    </ul>
   </div>
 </section>
 
