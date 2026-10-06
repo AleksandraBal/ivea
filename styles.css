@@ -1,215 +1,302 @@
 /* ============================================================
-   AI & Tax
-   Display: Newsreader — editorial serif, carries the argument.
-   Text:    IBM Plex Sans — engineered, precise, carries the detail.
-   The pairing is the point: law and systems, which is the talk.
+   AI & Tax — IVEA / IVCC template
+   Display: Gill Sans Bold. Text: Arial.
+   Slate field, mint footer, sage type on white cards.
    ============================================================ */
 :root{
-  --ink:    #0A2540;
-  --paper:  #FFFFFF;
-  --accent: #635BFF;
-  --signal: #00D4FF;
-  --mute:   #64758A;
-  --wash:   #F2F6FA;
-  --hair:   #D8E1EA;
+  --slate:  #657582;
+  --mint:   #E7EDE9;
+  --sage:   #698886;
+  --deep:   #486054;
+  --mist:   #CFD9D8;
+  --card:   #F6F6F6;
+  --white:  #FFFFFF;
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --sans:  "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --display: "Gill Sans", "Gill Sans MT", "GillSans", Calibri, sans-serif;
+  --sans:    Arial, Helvetica, sans-serif;
 }
 
 .reveal{
   font-family: var(--sans);
   font-size: 32px;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--white);
+  background: var(--slate);
   -webkit-font-smoothing: antialiased;
 }
 .reveal .slides{ text-align: left; }
+.reveal .slides > section,
+.reveal .slides > section.present{
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+}
 .reveal .slides section{
   height: 100%;
   box-sizing: border-box;
-  padding: 76px 96px 68px 96px;
+  padding: 64px 80px 56px 80px;
   display: flex;
   flex-direction: column;
+  background-color: var(--slate);
+  color: var(--white);
+  background-image: url("assets/ivcc-logo.png");
+  background-repeat: no-repeat;
+  background-position: right 52px top 36px;
+  background-size: 124px auto;
 }
 
-/* ---------- Titles: serif, one line when the slide can hold it ---------- */
 .slide-title{
-  font-family: var(--serif);
-  font-size: 62px;
-  font-weight: 500;
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 700;
   line-height: 1.08;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
   margin: 0;
-  white-space: nowrap;
+  color: var(--white);
+  max-width: 980px;
 }
 
-/* ---------- Standard bullets: no markers, space does the work ---------- */
 .bullets{
   list-style: none;
-  margin: 52px 0 0 0;
+  margin: 0;
   padding: 0;
 }
 .bullets li{
-  font-size: 37px;
+  font-size: 34px;
   font-weight: 400;
-  line-height: 1.32;
-  margin-bottom: 30px;
-  white-space: nowrap;
+  line-height: 1.35;
+  margin-bottom: 26px;
+  color: var(--white);
 }
 .bullets li:last-child{ margin-bottom: 0; }
-.bullets.five li{ font-size: 33px; margin-bottom: 22px; }
+.bullets.five li{ font-size: 32px; margin-bottom: 20px; }
 
 .slide-body{ flex: 1; min-height: 0; display: flex; align-items: center; }
 .slide-body > *{ width: 100%; }
 
-/* ============ TITLE SLIDE ============ */
-#title{ justify-content: flex-start; }
-.title-lead{ margin-top: 36px; }
+/* ============ TITLE — slate field, mint footer ============ */
+#title{
+  padding: 0;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  background-image:
+    url("assets/ivcc-logo.png"),
+    linear-gradient(to bottom, var(--slate) 68%, var(--mint) 68%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 56px bottom 36px, 0 0;
+  background-size: 124px auto, auto;
+}
+.title-lead{
+  height: 68%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 96px 24px 96px;
+}
 .title-label{
   font-family: var(--sans);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.32;
-  color: var(--mute);
-  margin-bottom: 30px;
-  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--mist);
+  margin-bottom: 28px;
+  max-width: 980px;
 }
 .title-main{
-  font-family: var(--serif);
-  font-size: 128px;
-  font-weight: 400;
-  letter-spacing: -0.028em;
+  font-family: var(--display);
+  font-size: 92px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 0.98;
   margin: 0;
+  color: var(--white);
 }
 .title-sub{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 40px;
+  font-family: var(--sans);
+  font-size: 30px;
   font-weight: 400;
-  color: var(--mute);
-  margin: 12px 0 0 0;
+  color: var(--mist);
+  margin: 18px 0 0 0;
 }
-.title-byline{ margin-top: auto; padding-top: 64px; }
-.title-author{ font-size: 29px; font-weight: 600; }
-.title-date{ font-size: 25px; color: var(--mute); margin-top: 6px; }
-.geo-accent{ position: absolute; right: 0; bottom: 0; width: 200px; height: 200px; }
-
-/* ============ INVERTED SLIDE — the one dark moment ============ */
-section.invert{ background: var(--ink); color: #FFFFFF; }
-section.invert .slide-title{ color: #FFFFFF; }
-section.invert .bullets li{ color: rgba(255,255,255,0.88); }
-section.invert .bullets li.punch{
-  color: var(--signal);
-  font-weight: 500;
+.title-byline{
+  height: 32%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 28px 220px 0 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--deep);
 }
-.reveal section.invert .slide-number{ color: rgba(255,255,255,0.45); }
+.title-author{
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--deep);
+}
+.title-author + .title-author{ margin-top: 4px; }
+.title-date{
+  font-family: var(--sans);
+  font-size: 22px;
+  color: var(--sage);
+  margin-top: 36px;
+}
 
-/* ============ FOUR-MOVE GRID (prompting) ============ */
+/* ============ TRAINERS ============ */
+#trainers .slide-body{ align-items: center; }
+.trainers{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+.trainer-photo{
+  display: block;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+.trainer h3{
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+}
+.trainer p{
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  margin: 0;
+}
+
+/* ============ EMPHASIS LINE ============ */
+.bullets li.punch{ font-weight: 700; color: var(--white); }
+
+/* ============ FOUR-MOVE GRID ============ */
 .moves{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 38px 56px;
-  margin-top: 44px;
+  gap: 22px 24px;
 }
-.move{ display: grid; grid-template-columns: 52px 1fr; align-items: start; }
+.move{
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: start;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 26px 24px 24px 22px;
+  color: var(--deep);
+}
 .move .n{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 38px;
-  color: var(--accent);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--sage);
   line-height: 1;
-  padding-top: 4px;
+  padding-top: 2px;
 }
 .move h3{
-  font-family: var(--sans);
-  font-size: 31px;
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--deep);
   margin: 0 0 8px 0;
 }
 .move p{
-  font-size: 24px;
-  line-height: 1.34;
-  color: var(--mute);
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--sage);
   margin: 0;
 }
 
 /* ============ THREE PATTERNS ============ */
-#patterns .slide-body{ align-items: flex-start; padding-top: 52px; }
-.patterns{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+#patterns .slide-body{ align-items: center; }
+.patterns{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .pattern{
-  background: var(--wash);
-  border-top: 4px solid var(--hair);
-  padding: 30px 28px 32px 28px;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 32px 28px 30px 28px;
+  color: var(--sage);
 }
-.pattern.is-pick{ border-top-color: var(--signal); background: #EAF1F8; }
+.pattern.is-pick{ background: var(--mint); }
 .pattern h3{
-  font-family: var(--serif);
-  font-size: 34px;
-  font-weight: 500;
-  margin: 0 0 20px 0;
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--sage);
+  margin: 0 0 18px 0;
 }
 .pattern ul{ list-style: none; margin: 0; padding: 0; }
-.pattern li{ font-size: 24px; line-height: 1.34; margin-bottom: 14px; }
+.pattern li{
+  font-size: 22px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: var(--sage);
+  padding-left: 16px;
+  position: relative;
+}
+.pattern li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+}
 .pattern li:last-child{ margin-bottom: 0; }
 
-/* ============ TAKEAWAYS — biggest type in the deck ============ */
-#takeaways .slide-body{ align-items: flex-start; padding-top: 52px; }
+/* ============ TAKEAWAYS ============ */
+#takeaways .slide-body{ align-items: center; }
 .takeaways{ list-style: none; margin: 0; padding: 0; counter-reset: t; }
 .takeaways li{
   counter-increment: t;
   display: grid;
-  grid-template-columns: 68px 1fr;
+  grid-template-columns: 64px 1fr;
   align-items: baseline;
-  margin-bottom: 34px;
-  font-size: 46px;
+  margin-bottom: 28px;
+  font-size: 40px;
   line-height: 1.2;
   font-weight: 400;
-  white-space: nowrap;
+  color: var(--white);
 }
 .takeaways li:last-child{ margin-bottom: 0; }
 .takeaways li::before{
   content: counter(t);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 34px;
-  color: var(--accent);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--mist);
 }
-#takeaways .slide-title{ font-size: 46px; color: var(--mute); }
+#takeaways .slide-title{ color: var(--white); }
 
-/* Long titles: step down just enough to stay on one line at 1280px */
-#cost .slide-title{ font-size: 60px; }
-#window .slide-title{ font-size: 55px; }
-#new-models .slide-title{ font-size: 58px; }
-
-
-/* ---------- Brand mark + section rhythm ---------- */
-.reveal .slides section:not(#title){
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%230A2540'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 136px 136px;
-}
-/* light wash marks a change of section — the eye registers it, no label needed */
-.reveal .slides section.wash{ background-color: #F5F8FB; }
-.reveal .slides section.invert{
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%23FFFFFF'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
-  background-color: var(--ink);
-}
-/* slide number moves left; the mark owns the bottom-right corner */
-.reveal .slide-number{ right: auto; left: 36px; }
+/* Long titles stay clear of the logo */
+#cost .slide-title,
+#window .slide-title{ font-size: 44px; }
 
 /* ---------- Chrome ---------- */
 .reveal .slide-number{
+  right: auto;
+  left: 36px;
   background: transparent;
-  color: var(--mute);
+  color: rgba(255, 255, 255, 0.72);
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 16px;
   bottom: 26px;
 }
+html.on-title .reveal .slide-number{ color: var(--deep); }
 
-/* ---------- Print / PDF: match the on-screen slide, one page each ---------- */
+.reveal .controls{ color: rgba(255, 255, 255, 0.85); }
+
+/* ---------- Print / PDF ---------- */
 @page{
   size: 13.333in 7.5in;
   margin: 0;
@@ -219,8 +306,10 @@ html.reveal-print .reveal .slides section,
 html.print-pdf .reveal .slides section{
   display: flex !important;
   flex-direction: column !important;
-  padding: 76px 96px 68px 96px !important;
+  padding: 64px 80px 56px 80px !important;
   box-sizing: border-box !important;
+  background-color: var(--slate) !important;
+  color: var(--white) !important;
 }
 
 html.reveal-print .reveal .speaker-notes,
@@ -235,7 +324,7 @@ html.print-pdf .reveal .speaker-notes-pdf{
     width: 1280px !important;
     margin: 0 !important;
     padding: 0 !important;
-    background: #fff !important;
+    background: var(--slate) !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -258,9 +347,9 @@ html.print-pdf .reveal .speaker-notes-pdf{
     width: 1280px !important;
     height: auto !important;
     overflow: visible !important;
-    background: #fff !important;
+    background: var(--slate) !important;
     font-size: 32px !important;
-    color: var(--ink) !important;
+    color: var(--white) !important;
   }
   html:not(.print-pdf) .reveal .slides{
     position: static !important;
@@ -295,7 +384,7 @@ html.print-pdf .reveal .speaker-notes-pdf{
     left: auto !important;
     top: auto !important;
     margin: 0 !important;
-    padding: 76px 96px 68px 96px !important;
+    padding: 64px 80px 56px 80px !important;
     box-sizing: border-box !important;
     opacity: 1 !important;
     transform: none !important;
@@ -303,6 +392,8 @@ html.print-pdf .reveal .speaker-notes-pdf{
     break-inside: avoid !important;
     page-break-after: auto !important;
     break-after: auto !important;
+    background-color: var(--slate) !important;
+    color: var(--white) !important;
   }
   html:not(.print-pdf) .reveal .slides section:not(:last-child){
     page-break-after: always !important;
@@ -320,19 +411,19 @@ html.print-pdf .reveal .speaker-notes-pdf{
   html:not(.print-pdf) .reveal h4,
   html:not(.print-pdf) .reveal p,
   html:not(.print-pdf) .reveal li{
-    font-size: inherit !important;
-    color: inherit !important;
     line-height: inherit !important;
     letter-spacing: inherit !important;
     text-align: inherit !important;
     height: auto !important;
   }
 
-  html:not(.print-pdf) .reveal .slide-title{ font-size: 62px !important; }
-  html:not(.print-pdf) #cost .slide-title{ font-size: 60px !important; }
-  html:not(.print-pdf) #window .slide-title{ font-size: 55px !important; }
-  html:not(.print-pdf) #new-models .slide-title{ font-size: 58px !important; }
-  html:not(.print-pdf) #takeaways .slide-title{ font-size: 46px !important; color: var(--mute) !important; }
+  html:not(.print-pdf) .reveal .slide-title{
+    font-size: 52px !important;
+    color: var(--white) !important;
+  }
+  html:not(.print-pdf) #cost .slide-title,
+  html:not(.print-pdf) #window .slide-title{ font-size: 44px !important; }
+  html:not(.print-pdf) #takeaways .slide-title{ color: var(--white) !important; }
 
   html:not(.print-pdf) .reveal .slide-body{
     display: flex !important;
@@ -344,26 +435,44 @@ html.print-pdf .reveal .speaker-notes-pdf{
   }
   html:not(.print-pdf) #patterns .slide-body,
   html:not(.print-pdf) #takeaways .slide-body{
-    align-items: flex-start !important;
+    align-items: center !important;
+  }
+  html:not(.print-pdf) #trainers .slide-body{
+    align-items: center !important;
   }
   html:not(.print-pdf) .reveal .bullets{
     display: block !important;
-    margin: 52px 0 0 0 !important;
+    margin: 0 !important;
     width: 100% !important;
   }
   html:not(.print-pdf) .reveal .bullets li{
-    font-size: 37px !important;
-    margin: 0 0 30px 0 !important;
+    font-size: 34px !important;
+    margin: 0 0 26px 0 !important;
+    color: var(--white) !important;
   }
   html:not(.print-pdf) .reveal .bullets.five li{
-    font-size: 33px !important;
-    margin: 0 0 22px 0 !important;
+    font-size: 32px !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  html:not(.print-pdf) .reveal .trainers{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+  }
+  html:not(.print-pdf) .reveal .trainer h3{
+    font-size: 32px !important;
+    color: var(--white) !important;
+  }
+  html:not(.print-pdf) .reveal .trainer p{
+    font-size: 22px !important;
+    color: var(--white) !important;
   }
 
   html:not(.print-pdf) .reveal .patterns{
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 28px !important;
+    gap: 24px !important;
     width: 100% !important;
     margin: 0 !important;
   }
@@ -371,29 +480,43 @@ html.print-pdf .reveal .speaker-notes-pdf{
     display: block !important;
     width: auto !important;
     margin: 0 !important;
-    background: var(--wash) !important;
+    background: var(--card) !important;
+    color: var(--sage) !important;
   }
-  html:not(.print-pdf) .reveal .pattern.is-pick{
-    background: #EAF1F8 !important;
+  html:not(.print-pdf) .reveal .pattern.is-pick{ background: var(--mint) !important; }
+  html:not(.print-pdf) .reveal .pattern h3{
+    font-size: 32px !important;
+    color: var(--sage) !important;
   }
-  html:not(.print-pdf) .reveal .pattern h3{ font-size: 34px !important; }
-  html:not(.print-pdf) .reveal .pattern li{ font-size: 24px !important; margin: 0 0 14px 0 !important; }
+  html:not(.print-pdf) .reveal .pattern li{
+    font-size: 22px !important;
+    margin: 0 0 12px 0 !important;
+    color: var(--sage) !important;
+  }
 
   html:not(.print-pdf) .reveal .moves{
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 38px 56px !important;
+    gap: 22px 24px !important;
     width: 100% !important;
-    margin: 44px 0 0 0 !important;
+    margin: 0 !important;
   }
   html:not(.print-pdf) .reveal .move{
     display: grid !important;
-    grid-template-columns: 52px 1fr !important;
+    grid-template-columns: 48px 1fr !important;
     width: auto !important;
     margin: 0 !important;
+    background: var(--card) !important;
   }
-  html:not(.print-pdf) .reveal .move h3{ font-size: 31px !important; }
-  html:not(.print-pdf) .reveal .move p{ font-size: 24px !important; color: var(--mute) !important; }
+  html:not(.print-pdf) .reveal .move h3{
+    font-size: 28px !important;
+    color: var(--deep) !important;
+  }
+  html:not(.print-pdf) .reveal .move p{
+    font-size: 20px !important;
+    color: var(--sage) !important;
+  }
+  html:not(.print-pdf) .reveal .move .n{ color: var(--sage) !important; }
 
   html:not(.print-pdf) .reveal .takeaways{
     display: block !important;
@@ -402,37 +525,61 @@ html.print-pdf .reveal .speaker-notes-pdf{
   }
   html:not(.print-pdf) .reveal .takeaways li{
     display: grid !important;
-    grid-template-columns: 68px 1fr !important;
-    font-size: 46px !important;
-    margin: 0 0 34px 0 !important;
+    grid-template-columns: 64px 1fr !important;
+    font-size: 40px !important;
+    margin: 0 0 28px 0 !important;
     width: auto !important;
+    color: var(--white) !important;
   }
 
   html:not(.print-pdf) .reveal #title{
     justify-content: flex-start !important;
+    background-color: var(--mint) !important;
+    padding: 0 !important;
   }
   html:not(.print-pdf) .reveal .title-lead{
-    display: block !important;
-    margin: 36px 0 0 0 !important;
+    display: flex !important;
+    height: 68% !important;
+    margin: 0 !important;
+    padding: 72px 96px 24px 96px !important;
     width: auto !important;
   }
   html:not(.print-pdf) .reveal .title-byline{
-    display: block !important;
-    margin-top: auto !important;
-    padding-top: 64px !important;
+    display: flex !important;
+    height: 32% !important;
+    margin: 0 !important;
+    padding: 28px 220px 0 96px !important;
     width: auto !important;
   }
-  html:not(.print-pdf) .reveal .title-label{ font-size: 24px !important; margin: 0 0 30px 0 !important; }
-  html:not(.print-pdf) .reveal .title-main{ font-size: 128px !important; color: var(--ink) !important; }
-  html:not(.print-pdf) .reveal .title-sub{ font-size: 40px !important; margin: 12px 0 0 0 !important; }
-  html:not(.print-pdf) .reveal .title-author{ font-size: 29px !important; }
-  html:not(.print-pdf) .reveal .title-date{ font-size: 25px !important; margin: 6px 0 0 0 !important; }
+  html:not(.print-pdf) .reveal .title-label{
+    font-size: 18px !important;
+    margin: 0 0 28px 0 !important;
+    color: var(--mist) !important;
+  }
+  html:not(.print-pdf) .reveal .title-main{
+    font-size: 92px !important;
+    color: var(--white) !important;
+  }
+  html:not(.print-pdf) .reveal .title-sub{
+    font-size: 30px !important;
+    margin: 18px 0 0 0 !important;
+    color: var(--mist) !important;
+  }
+  html:not(.print-pdf) .reveal .title-author{
+    font-size: 32px !important;
+    color: var(--deep) !important;
+  }
+  html:not(.print-pdf) .reveal .title-date{
+    font-size: 22px !important;
+    margin: 36px 0 0 0 !important;
+    color: var(--sage) !important;
+  }
 
   .reveal .slides section,
-  section.invert,
-  section.wash,
+  #title,
   .pattern,
-  .pattern.is-pick{
+  .pattern.is-pick,
+  .move{
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }

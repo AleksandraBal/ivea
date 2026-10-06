@@ -3,14 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI &amp; Tax</title>
+<title>AI and VAT</title>
 
 <!-- Reveal.js core -->
 <link rel="stylesheet" href="vendor/reveal.js/reset.css">
 <link rel="stylesheet" href="vendor/reveal.js/reveal.css">
-
-<!-- Typefaces: Newsreader (display) + IBM Plex Sans (text) -->
-<link rel="stylesheet" href="fonts/fonts.css">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,19 +18,32 @@
 <!-- ============ 1. TITLE ============ -->
 <section id="title">
   <div class="title-lead">
-    <div class="title-label">10th Annual Strategic Indirect Tax, VAT Management and E-Invoicing Summit</div>
-    <h2 class="title-main">AI &amp; Tax</h2>
-    <p class="title-sub">Working with LLMs in tax practice</p>
+    <div class="title-label">International VAT Expert Academy</div>
+    <h2 class="title-main">AI and VAT</h2>
+    <p class="title-sub">Developments, risks and opportunities</p>
   </div>
   <div class="title-byline">
-    <div class="title-author">Dr Aleksandra Bal</div>
-    <div class="title-date">10 September 2026</div>
+    <div class="title-author">Dr. Aleksandra Bal</div>
+    <div class="title-author">Dr. Atanas Mateev</div>
+    <div class="title-date">9 October 2026</div>
   </div>
-  <svg class="geo-accent" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-    <rect x="80" y="90" width="110" height="65" fill="#00D4FF"/>
-    <rect x="105" y="60" width="90" height="60" fill="#0A2540"/>
-    <rect x="125" y="110" width="80" height="70" fill="#635BFF"/>
-  </svg>
+</section>
+
+<!-- ============ 2. TRAINERS ============ -->
+<section id="trainers">
+  <h2 class="slide-title">Trainers</h2>
+  <div class="slide-body">
+    <div class="trainers">
+      <div class="trainer">
+        <img class="trainer-photo" src="assets/aleks.png" alt="Dr. Aleksandra Bal">
+        <h3>Dr. Aleksandra Bal</h3>
+      </div>
+      <div class="trainer">
+        <img class="trainer-photo" src="assets/atanas.png" alt="Dr. Atanas Mateev">
+        <h3>Dr. Atanas Mateev</h3>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ============ 2. LANDSCAPE ============ -->
@@ -58,6 +68,20 @@
       <li>Real gains: drafting, summarizing, research</li>
       <li>More output, not more time</li>
       <li>AI slop: unreviewed drafts passed on</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5. AI IN VAT PRACTICE ============ -->
+<section id="practice">
+  <h2 class="slide-title">AI in VAT Practice Today</h2>
+  <div class="slide-body">
+    <ul class="bullets five">
+      <li>AI-assisted VAT research</li>
+      <li>Drafting VAT memos and technical analyses</li>
+      <li>Reviewing contracts and transactional flows</li>
+      <li>VAT compliance and reporting support</li>
+      <li>Knowledge management and training</li>
     </ul>
   </div>
 </section>
@@ -229,6 +253,13 @@ Reveal.initialize({
   pdfMaxPagesPerSlide: 1,
   pdfSeparateFragments: false
 }).then(function () {
+  function syncChrome() {
+    var slide = Reveal.getCurrentSlide();
+    document.documentElement.classList.toggle('on-title', !!(slide && slide.id === 'title'));
+  }
+  syncChrome();
+  Reveal.on('slidechanged', syncChrome);
+
   function stripPrintChrome() {
     document.querySelectorAll(
       '.speaker-notes, .speaker-notes-pdf, .pause-overlay, .playback, .jump-to-slide'
